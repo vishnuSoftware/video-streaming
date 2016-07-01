@@ -1,0 +1,59 @@
+<div class="container ">
+    <h3> SME dash board</h3>
+    <br>
+    <div class="row">
+        <div class=" col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" value="{{exemptionFiles[0].name}}"  placeholder="Select the video to upload" readonly/>
+            <span class="input-group-btn">
+            <button class="btn btn-secondary btn-info " ngf-select ng-model="exemptionFiles" accept=".mp4" type="button">Browse</button>
+            </span>
+            <span class="input-group-btn">
+            <button ng-click="uploadFile(exemptionFiles)" ng-disabled="!exemptionFiles.length>0" class="btn btn-success">Upload&nbsp;<span class="glyphicon glyphicon-cloud-upload"></span></button>
+            </span>
+            </div>
+        </div>
+        <!--<div class=" col-md-6">-->
+        <!--<div class="col-lg-offset-2 col-md-12">-->
+        <!--<div class="playlist">-->
+        <!--<h4>List of videos</h4>-->
+        <!--<ul>-->
+        <!--<li ng-repeat="item in fileRecords">{{item.fileName.substr(0,item.fileName.length-4)}}&nbsp;&nbsp;&nbsp;-->
+        <!--<a href="" class="text-danger btn btn-danger" ng-click="deleteFile($index)">delete<span class="glyphicon glyphicon-trash"></span></a>-->
+        <!--</li>-->
+        <!--&lt;!&ndash;<li ng-repeat="item in fileRecords"><a ng-click="deleteFile($index)">{{item.fileName.substr(0,item.fileName.length-4)}}</a></li>&ndash;&gt;-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+    <br>
+    <div class="row">
+        <div class="container col-md-6">
+            <h3>List of videos</h3>
+            <div class="table-responsive ">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <!--<th>#</th>-->
+                        <!--<th>Firstname</th>-->
+                        <!--<th>Lastname</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in fileRecords">
+                        <td>{{$index+1}}</td>
+                        <td>{{item.fileName.substr(0,item.fileName.length-4)}}</td>
+                        <td><a href="" class="text-danger btn btn-sm btn-danger" ng-click="deleteFile($index)">delete<span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!--<span sb-spinner="{radius:30, width:8, length: 16}" spinner-key="spinner"></span>-->
+    <span sb-spinner="{radius:30, width:8, length: 40}" spinner-key="spinner"></span>
+</div>

@@ -1,0 +1,50 @@
+
+<br><br><br>
+
+<div class="container  ">
+    <h3> User dash board</h3>
+    <!--<p>A navigation bar is a navigation header that is placed at the top of the page.</p>-->
+
+    <div class="row" >
+        <div class="col-md-6">
+            <div class="videogular-container" >
+                <videogular vg-player-ready="onPlayerReady($API)" vg-complete="onCompleteVideo()" vg-theme="config.theme.url" >
+                    <vg-media vg-src="config.sources"
+                              vg-tracks="config.tracks">
+                    </vg-media>
+                    <vg-controls>
+                        <vg-play-pause-button></vg-play-pause-button>
+                        <vg-time-display>{{currentTime | date:"HH:mm:ss" : 'UTC'}}</vg-time-display>
+                        <vg-scrub-bar>
+                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        </vg-scrub-bar>
+                        <vg-time-display>{{ timeLeft | date:'HH:mm:ss': 'UTC' }}</vg-time-display>
+                        <vg-volume>
+                            <vg-mute-button></vg-mute-button>
+                            <vg-volume-bar></vg-volume-bar>
+                        </vg-volume>
+                        <vg-fullscreen-button></vg-fullscreen-button>
+                    </vg-controls>
+                    <vg-overlay-play></vg-overlay-play>
+                    <vg-buffering></vg-buffering>
+                    <vg-poster vg-url='config.plugins.poster'></vg-poster>
+                </videogular>
+            </div>
+            <br>
+            <div>
+                <h3>{{title}}</h3>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <input   ng-model="searchText" class="form-control input-sm " placeholder="Search"/><br>
+
+
+            <div  ng-repeat="item in listOfVideos  | filter : searchText">   <thumbnail ng-click="setVideo(item.fileName)" file-type="video" source={{item.fileName}} max-height="75" max-width="150"> </thumbnail><h5>{{item.fileName.substr(0,item.fileName.length-4)}}</h5>
+            </div>
+
+            <!--<li ng-repeat="item in listOfVideos | filter : searchText"><a href="" ng-click="setVideo(item.fileName)">{{item.fileName.substr(0,item.fileName.length-4)}}</a></li>-->
+
+        </div>
+    </div>
+</div>
+

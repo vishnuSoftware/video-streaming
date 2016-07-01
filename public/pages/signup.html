@@ -1,0 +1,62 @@
+<div>
+    <toaster-container toaster-options="{'close-button':true}"></toaster-container>
+</div>
+<div ng-show="!signupOk" class="container center-form">
+
+    <div class="row">
+        <br><br><br><br>
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="modal-header" >
+                <h4 class="text-center "><span class="glyphicon glyphicon-user"></span>SignUp</h4>
+            </div>
+        </div>
+    </div>
+    <!--<div ng-show="errorUser" class="row">-->
+    <!--<div class="col-sm-6 col-md-4 col-md-offset-4">-->
+    <!--<div class="alert alert-danger">-->
+    <!--<strong>Sorry!</strong><br> Email Id already exist.<br><br>-->
+    <!--&lt;!&ndash;<p>Now you can login...!&nbsp;&nbsp;<a ui-sref="login">login</a></p>&ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <form role="form">
+                <div class="form-group">
+                    <div class="form-group">
+                        <!--<label >User Name</label>-->
+                        <input type="text" class="form-control"   ng-model="user.name" placeholder="Name">
+                    </div>
+                    <!--<label >Email Id</label>-->
+                    <input type="email" class="form-control"   ng-model="user.email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <!--<label  >Password</label>-->
+                    <input type="password" class="form-control"   ng-model='user.password'placeholder=" Password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" ng-click="create(user)"><span class="glyphicon glyphicon-user"></span> Create</button>
+            </form>
+
+            <br>
+            <p class="pull-right">Login here...!&nbsp;&nbsp;<a ui-sref="login">login</a></p>
+        </div>
+    </div>
+</div>
+<div ng-show="signupOk">
+    <div class="row">
+        <br><br><br><br>
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-3 col-md-offset-4">
+            <div class="alert alert-success">
+                <strong>Success!</strong><br> Your successfully user.<br><br>
+                <p>Now you can login...!&nbsp;&nbsp;<a ui-sref="login">login</a></p>
+            </div>
+        </div>
+    </div>
+</div>
